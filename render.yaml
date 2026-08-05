@@ -1,0 +1,30 @@
+services:
+  # 1. Flask Python Backend API Web Service
+  - type: web
+    name: scamshield-backend
+    env: python
+    region: singapore
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "cd backend && gunicorn app:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: GEMINI_API_KEY
+        sync: false
+
+  # 2. React Vite Frontend Static Site
+  - type: static
+    name: scamshield-frontend
+    region: singapore
+    buildCommand: "cd frontend && npm install && npm run build"
+    staticPublishPath: "./frontend/dist"
+    routes:
+      - type: rewrite
+        source: "/*"
+        destination: "/index.html"
+    envVars:
+      - key: VITE_API_BASE_URL
+        fromService:
+          type: web
+          name: scamshield-backend
+          property: host
