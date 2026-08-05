@@ -1,0 +1,46 @@
+{
+  "+18005550199": {
+    "number": "+18005550199",
+    "carrier": "T-Mobile USA",
+    "location": "New York, USA",
+    "spamReports": 1420,
+    "fraudReports": 890,
+    "category": "Fake Bank Verification / OTP Scam",
+    "communityTrustScore": 12,
+    "riskLevel": "Critical",
+    "recentReports": [
+      {
+        "date": "2026-08-04",
+        "comment": "Called claiming to be Chase fraud department asking for my OTP.",
+        "tag": "Bank Fraud"
+      },
+      {
+        "date": "2026-08-02",
+        "comment": "Automated voice message about account lock.",
+        "tag": "Robocall"
+      }
+    ]
+  },
+  "+919876543210": {
+    "number": "+919876543210",
+    "carrier": "Bharti Airtel",
+    "location": "New Delhi, India",
+    "spamReports": 2340,
+    "fraudReports": 1890,
+    "category": "Fake UPI Cashback / Army Officer Scam",
+    "communityTrustScore": 8,
+    "riskLevel": "Critical",
+    "recentReports": [
+      {
+        "date": "2026-08-05",
+        "comment": "Sent fake QR code on WhatsApp for OLX item purchase.",
+        "tag": "UPI Fraud"
+      },
+      {
+        "date": "2026-08-03",
+        "comment": "Posed as CISF officer demanding advance delivery fee.",
+        "tag": "Impersonation"
+      }
+    ]
+  }
+}
