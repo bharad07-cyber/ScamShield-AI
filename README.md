@@ -1,11 +1,6 @@
 # 🛡️ ScamShield AI - Think Before You Trust
 
 [![Live Web Application](https://img.shields.io/badge/Live_App-https%3A%2F%2Fscamshield--ai--cfij.onrender.com-00E5FF?style=for-the-badge&logo=render&logoColor=white)](https://scamshield-ai-cfij.onrender.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![React 18](https://img.shields.io/badge/Frontend-React_18_%7C_TypeScript-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
-[![Tailwind v4](https://img.shields.io/badge/Styling-Tailwind_v4_%7C_Glassmorphism-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Flask Python](https://img.shields.io/badge/Backend-Flask_Python_3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://flask.palletsprojects.com/)
-[![AI Engine](https://img.shields.io/badge/AI_Engine-Multi--Stage_Cybersecurity_Analyst-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](https://deepmind.google/)
 
 ---
 
