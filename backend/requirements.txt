@@ -1,0 +1,6 @@
+Flask
+Flask-CORS
+PyJWT
+requests
+python-dotenv
+Pillow
