@@ -1,12 +1,48 @@
 # 🛡️ ScamShield AI - Think Before You Trust
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com)
 [![React](https://img.shields.io/badge/Frontend-React%2018%20%7C%20TypeScript%20%7C%20Vite-blue)](https://reactjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20v4%20%7C%20Glassmorphism-06B6D4)](https://tailwindcss.com/)
 [![Flask](https://img.shields.io/badge/Backend-Flask%20Python%203-000000)](https://flask.palletsprojects.com/)
-[![AI Engine](https://img.shields.io/badge/AI-Multi--Stage%20Cybersecurity%20Analyst-7C3AED)](https://deepmind.google/)
 
 > **ScamShield AI** is an advanced, commercial-grade SaaS cybersecurity web application designed to protect everyday users from phishing emails, fraudulent UPI payment requests, Telegram job scams, typosquatted websites, malicious QR codes, and SMS fraud.
+
+---
+
+## 🌐 Deploy to Vercel (Frontend Static / SPA Deployment)
+
+### Method 1: Import via Vercel Dashboard
+1. Go to [Vercel Dashboard](https://vercel.com/new) and click **Add New Project**.
+2. Select your repository: `bharad07-cyber/ScamShield-AI`.
+3. Set **Framework Preset**: `Vite`.
+4. Set **Root Directory**: `frontend` (or leave default root directory).
+5. Set **Build Command**: `npm run build`
+6. Set **Output Directory**: `dist`
+7. Click **Deploy**. Vercel will build and host your frontend web app!
+
+---
+
+## 🚀 Deploy to Render (1-Click Fullstack Deployment)
+
+### Method 1: Automatic Blueprint (Recommended)
+1. Go to [Render Dashboard](https://dashboard.render.com/select-repo?type=blueprint) and select **Blueprints**.
+2. Connect repository `bharad07-cyber/ScamShield-AI`.
+3. Render will read `render.yaml` and automatically create two services:
+   - **`scamshield-backend`** (Flask Python Web Service using `gunicorn app:app`).
+   - **`scamshield-frontend`** (Static Site using React Vite output `frontend/dist`).
+4. Add your environment variable `GEMINI_API_KEY` under backend settings.
+5. Click **Apply**. Both your frontend and backend will be live!
+
+### Method 2: Manual Render Services
+- **Backend Web Service**:
+  - Build Command: `pip install -r backend/requirements.txt`
+  - Start Command: `cd backend && gunicorn app:app`
+- **Frontend Static Site**:
+  - Root Directory: `frontend`
+  - Build Command: `npm install && npm run build`
+  - Publish Directory: `dist`
+  - Add Rewrite Rule: `/*` -> `/index.html`
 
 ---
 
@@ -20,50 +56,22 @@
 6. **📞 Phone Number Fraud Scanner (`/scan/phone`)**: Looks up phone numbers against community spam databases, fraud report counts, and provides a "Report Scam Number" modal.
 7. **🤖 AI Security Advisor Chat (`/chat`)**: ChatGPT-style interactive cybersecurity advisor for safety guidance and threat explanations.
 8. **📊 Scan History & PDF Generator (`/history`)**: Filter, search, favorite, soft-delete/restore, and export commercial PDF Security Audit Reports (`jsPDF`).
-9. **🚨 Real-Time Threat Feed (`/threat-feed`)**: Live attack ticker tracking active UPI frauds, Telegram job scams, and electric bill phishing campaigns.
-10. **🛡️ Admin Command Center (`/admin`)**: System telemetry, total scans, detection accuracy %, and user moderation table.
 
 ---
 
-## 🔬 Multi-Stage AI Reasoning Architecture
+## 🛠️ Local Development Setup
 
-Unlike simple keyword matchers, **ScamShield AI** employs a 5-Stage Evidence Reasoning Engine:
-- **Stage 1: Contextual Intent & Syntactic Analysis**: Evaluates full sentence context and coercive verb-object pairings.
-- **Stage 2: Entity & Structural Extractor**: Extracts URLs, domain extensions (`.xyz`, `.top`), UPI handles (`@ybl`, `@oksbi`), phone numbers, and OTP requests.
-- **Stage 3: Social Engineering Profiling**: Profiles urgency, fear, greed, scarcity, authority impersonation, and fake payouts.
-- **Stage 4: Self-Validation Step (False Positive Guardrail)**: Evaluates *"Could this content be legitimate?"* to minimize false positives.
-- **Stage 5: Evidence-Grounded Indicators & Confidence Threshold**: Dynamically calculates percentages for all threat indicators. If confidence falls below 70%, it clearly flags *"More evidence required"*.
-
----
-
-## 🚀 Quick Start Guide
-
-### Prerequisites
-- Node.js v18+
-- Python 3.10+
-
-### 1. Frontend Setup (React + Vite + Tailwind v4)
 ```bash
+# Frontend (React + Vite)
 cd frontend
 npm install
 npm run dev
-```
-- Open `http://localhost:3000` in your browser.
 
-### 2. Backend Setup (Flask Python API)
-```bash
+# Backend (Flask Python API)
 cd backend
 pip install -r requirements.txt
 python app.py
 ```
-- Starts API server on `http://localhost:5000`.
-
----
-
-## 🛠️ Tech Stack
-
-- **Frontend**: React 18, TypeScript, Vite, Tailwind CSS v4 (`@tailwindcss/vite`), Framer Motion, Lucide Icons, Chart.js, `tesseract.js`, `jsqr`, `jsPDF`.
-- **Backend**: Python, Flask, Flask-CORS, PyJWT, Google Gemini API (`gemini-1.5-flash`), Pillow, Local JSON Data Store.
 
 ---
 
