@@ -1,79 +1,131 @@
 # 🛡️ ScamShield AI - Think Before You Trust
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com)
-[![React](https://img.shields.io/badge/Frontend-React%2018%20%7C%20TypeScript%20%7C%20Vite-blue)](https://reactjs.org/)
-[![Flask](https://img.shields.io/badge/Backend-Flask%20Python%203-000000)](https://flask.palletsprojects.com/)
-
-> **ScamShield AI** is an advanced, commercial-grade SaaS cybersecurity web application designed to protect everyday users from phishing emails, fraudulent UPI payment requests, Telegram job scams, typosquatted websites, malicious QR codes, and SMS fraud.
-
----
-
-## 🌐 Deploy to Vercel (Frontend Static / SPA Deployment)
-
-### Method 1: Import via Vercel Dashboard
-1. Go to [Vercel Dashboard](https://vercel.com/new) and click **Add New Project**.
-2. Select your repository: `bharad07-cyber/ScamShield-AI`.
-3. Set **Framework Preset**: `Vite`.
-4. Set **Root Directory**: `frontend` (or leave default root directory).
-5. Set **Build Command**: `npm run build`
-6. Set **Output Directory**: `dist`
-7. Click **Deploy**. Vercel will build and host your frontend web app!
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Production-00E5FF?style=for-the-badge&logo=render&logoColor=white)](https://scamshield-ai-cfij.onrender.com/dashboard)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![React 18](https://img.shields.io/badge/Frontend-React_18_%7C_TypeScript-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![Tailwind v4](https://img.shields.io/badge/Styling-Tailwind_v4_%7C_Glassmorphism-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Flask Python](https://img.shields.io/badge/Backend-Flask_Python_3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://flask.palletsprojects.com/)
+[![AI Engine](https://img.shields.io/badge/AI_Engine-Multi--Stage_Cybersecurity_Analyst-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](https://deepmind.google/)
 
 ---
 
-## 🚀 Deploy to Render (1-Click Fullstack Deployment)
+## 🌟 Executive Summary
 
-### Method 1: Automatic Blueprint (Recommended)
-1. Go to [Render Dashboard](https://dashboard.render.com/select-repo?type=blueprint) and select **Blueprints**.
-2. Connect repository `bharad07-cyber/ScamShield-AI`.
-3. Render will read `render.yaml` and automatically create two services:
-   - **`scamshield-backend`** (Flask Python Web Service using `gunicorn app:app`).
-   - **`scamshield-frontend`** (Static Site using React Vite output `frontend/dist`).
-4. Add your environment variable `GEMINI_API_KEY` under backend settings.
-5. Click **Apply**. Both your frontend and backend will be live!
+**ScamShield AI** is an enterprise-grade SaaS cybersecurity web application built to defend individuals and organizations against sophisticated digital fraud. Millions of users daily fall prey to phishing emails, fake UPI payment QR traps, Telegram task scams, brand impersonation websites, and coercive SMS notices. 
 
-### Method 2: Manual Render Services
-- **Backend Web Service**:
-  - Build Command: `pip install -r backend/requirements.txt`
-  - Start Command: `cd backend && gunicorn app:app`
-- **Frontend Static Site**:
-  - Root Directory: `frontend`
-  - Build Command: `npm install && npm run build`
-  - Publish Directory: `dist`
-  - Add Rewrite Rule: `/*` -> `/index.html`
+ScamShield AI replaces simple static keyword matchers with a **Multi-Stage Evidence Reasoning AI Engine** that performs deep semantic NLP parsing, entity extraction, psychological manipulation profiling, and evidence-grounded threat scoring.
+
+🔗 **Live Production URL**: [https://scamshield-ai-cfij.onrender.com/dashboard](https://scamshield-ai-cfij.onrender.com/dashboard)
 
 ---
 
-## ✨ Features & Threat Vectors Analyzed
+## 🚀 Key Modules & Threat Vectors
 
-1. **💬 Message Scanner (`/scan/message`)**: Analyzes SMS, WhatsApp, Telegram, Email, IG, Discord, and LinkedIn messages. Evaluates urgency triggers, financial coercion, emotional manipulation, and credential harvesting risks.
-2. **🌐 Website & Domain Scanner (`/scan/website`)**: Evaluates target URLs, HTTPS & SSL certificate status, domain registration age, typosquatting/brand impersonation flags, and redirect chains.
-3. **📧 Email Phishing Scanner (`/scan/email`)**: Audits email sender domain spoofing, subject line urgency, dangerous attachment extensions (`.exe`, `.iso`, `.vbs`), and credential harvest risk.
-4. **📱 QR Code Scanner (`/scan/qr`)**: Decodes QR code payloads, detects fake UPI payment collect links (`upi://pay`), short URL expanders, and redirect targets.
-5. **🖼️ Image OCR & Screenshot Scanner (`/scan/image`)**: Upload screenshots of WhatsApp chats, bank SMS alerts, or posters. Uses client-side Tesseract OCR + HTML5 Canvas image preprocessing (grayscale & contrast boost) to extract text and auto-detect QR codes.
-6. **📞 Phone Number Fraud Scanner (`/scan/phone`)**: Looks up phone numbers against community spam databases, fraud report counts, and provides a "Report Scam Number" modal.
-7. **🤖 AI Security Advisor Chat (`/chat`)**: ChatGPT-style interactive cybersecurity advisor for safety guidance and threat explanations.
-8. **📊 Scan History & PDF Generator (`/history`)**: Filter, search, favorite, soft-delete/restore, and export commercial PDF Security Audit Reports (`jsPDF`).
+### 1. 💬 Message Threat Scanner (`/scan/message`)
+- Analyzes text across SMS, WhatsApp, Telegram, Email, Instagram, Discord, and LinkedIn.
+- Evaluates urgency cues, financial coercion, emotional manipulation, and credential theft risk.
+- Highlights exact suspicious phrases with interactive tooltips and provides evidence-based action checklists.
+
+### 2. 🌐 Website & Domain Scanner (`/scan/website`)
+- Evaluates target URLs for typosquatting/brand impersonation against top 100 corporate brands (Levenshtein distance).
+- Calculates estimated domain registration age, verifies HTTPS & SSL validity, and tracks redirect hops.
+
+### 3. 📧 Email Phishing Auditor (`/scan/email`)
+- Audits email headers for webmail domain spoofing (e.g. `support@paypal-security-update.com` vs `@paypal.com`).
+- Scans subject lines for coercive time limits and identifies dangerous attachment extensions (`.exe`, `.iso`, `.vbs`, `.scr`).
+
+### 4. 📱 QR Code & Payment Scanner (`/scan/qr`)
+- Decodes QR payloads, detects fake UPI payment collect links (`upi://pay`), short URL expanders, and unverified payment gateways.
+- Enforces the core security rule: *"Entering a UPI PIN is ONLY to send money, NEVER to receive money."*
+
+### 5. 🖼️ Image OCR & Screenshot Scanner (`/scan/image`)
+- Upload screenshots of WhatsApp chats, bank SMS notices, posters, or payment receipts (PNG, JPG, WEBP).
+- Preprocesses images on HTML5 Canvas (grayscale & contrast boost) for **Tesseract OCR** text extraction and automatic **QR code detection**.
+
+### 6. 📞 Phone Fraud Lookup (`/scan/phone`)
+- Cross-references caller numbers against community spam databases, fraud report counts, and robocall categories.
+- Includes an interactive modal for users to submit new scam phone numbers to the global threat index.
+
+### 7. 🤖 AI Security Advisor Chat (`/chat`)
+- ChatGPT-like conversational cybersecurity expert providing real-time safety guidance, scam explanations, and threat mitigation steps.
+
+### 8. 📊 Scan History & Commercial PDF Generator (`/history`)
+- Complete data grid featuring live search, vector filtering, risk sorting, favorite toggles, soft-delete/restore, and one-click **Commercial PDF Security Audit Report** generation (`jsPDF`).
 
 ---
 
-## 🛠️ Local Development Setup
+## 🔬 Multi-Stage AI Reasoning Architecture
 
+Unlike primitive template matchers that flag innocent words out of context, **ScamShield AI** employs a 5-Stage Evidence Reasoning Engine:
+
+```mermaid
+graph TD
+    A[Input Vector] --> B[Stage 1: Context & Intent Analysis]
+    B --> C[Stage 2: Entity & Structure Extractor]
+    C --> D[Stage 3: Social Engineering Profiling]
+    D --> E[Stage 4: Self-Validation Guardrail]
+    E --> F[Stage 5: Calculated Indicators & Verdict]
+```
+
+- **Stage 1: Contextual Intent & Syntactic Analysis**: Parses sentence structures and coercive verb-object pairings (e.g. *"click link to verify"*, *"enter PIN to receive"*).
+- **Stage 2: Entity Extractor**: Extracts URLs, domain extensions (`.xyz`, `.click`), UPI handles (`@ybl`, `@oksbi`), phone numbers, and OTP requests.
+- **Stage 3: Social Engineering Profiling**: Profiles urgency, fear, greed, scarcity, authority impersonation, and fake payout traps.
+- **Stage 4: Self-Validation Step (False Positive Guardrail)**: Evaluates *"Could this content be legitimate based on organizational standards?"* to eliminate false positives.
+- **Stage 5: Evidence-Grounded Indicators & Confidence Threshold**: Dynamically calculates percentages for all threat indicators. If confidence falls below 70%, it clearly flags *"More evidence required"*.
+
+---
+
+## 📊 Cybersecurity Risk Analysis Tiers
+
+Every scan produces a comprehensive **Risk Analysis Card**:
+
+| Score | Risk Level | Emoji | Action Required |
+| :---: | :--- | :---: | :--- |
+| **0 – 20** | **Safe** | 🟢 | Content appears legitimate. Follow standard security hygiene. |
+| **21 – 40** | **Low Risk** | 🟡 | Low threat indicators. Verify sender identity via official channels. |
+| **41 – 60** | **Suspicious** | 🟠 | Moderate threat cues detected. Do not click embedded links. |
+| **61 – 80** | **High Risk** | 🔴 | High threat probability. Block sender and avoid entering credentials. |
+| **81 – 100** | **Critical Scam** | 🚨 | Severe fraudulent scam attempt. Report immediately to Cyber Crime. |
+
+---
+
+## 🛠️ Tech Stack & Architecture
+
+- **Frontend**: React 18, TypeScript, Vite, Tailwind CSS v4 (`@tailwindcss/vite`), Framer Motion, Lucide Icons, Chart.js, `tesseract.js`, `jsqr`, `jsPDF`.
+- **Backend**: Python 3.11, Flask, Flask-CORS, PyJWT, Gunicorn WSGI, Google Gemini API (`gemini-1.5-flash`), Pillow, Local Persistence Engine.
+- **Design System**: Sleek Dark Theme (`#09090B`), Glassmorphism backdrop blur cards, glowing neon risk indicators, Inter typography.
+
+---
+
+## ⚙️ Local Development Setup
+
+### 1. Clone & Install Frontend
 ```bash
-# Frontend (React + Vite)
-cd frontend
+git clone https://github.com/bharad07-cyber/ScamShield-AI.git
+cd ScamShield-AI/frontend
 npm install
 npm run dev
+```
 
-# Backend (Flask Python API)
-cd backend
+### 2. Install & Launch Backend API
+```bash
+cd ../backend
 pip install -r requirements.txt
 python app.py
 ```
+- Access Frontend UI at `http://localhost:3000`
+- Access Backend API at `http://localhost:5000`
+
+---
+
+## 🌐 Production Deployment
+
+### Render Deployment (Recommended)
+This repository includes a pre-configured `render.yaml` blueprint:
+- **Build Command**: `pip install -r requirements.txt && cd frontend && npm install && npm run build`
+- **Start Command**: `gunicorn app:app`
 
 ---
 
 ## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Distributed under the MIT License. See `LICENSE` for details.
